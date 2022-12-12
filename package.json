@@ -1,9 +1,27 @@
 {
   "name": "styled-mini-props",
   "version": "1.0.0",
-  "description": "Small helper tool for styled components. Provides a minimalist solution for responsive properties and for hover and focus css pseudoclasses.",
-  "main": "index.js",
-  "repository": "git@github.com:ranaclyde/styled-mini-props.git",
   "author": "Matías E Sanhueza <manoloesanhueza@gmail.com>",
-  "license": "MIT"
+  "description": "Small helper tool for styled components. Provides a minimalist solution for responsive properties and for hover and focus css pseudoclasses.",
+  "keywords": [
+    "react",
+    "styled-components",
+    "pseudoclasess",
+    "responsive"
+  ],
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "babel src/index.js --out-file dist/index.js",
+    "test": "echo \"Error: no test specified yet\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ranaclyde/styled-mini-props.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2"
+  }
 }
