@@ -1,6 +1,6 @@
 {
   "name": "styled-mini-props",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "author": "Matías E Sanhueza <manoloesanhueza@gmail.com>",
   "description": "Small helper tool for styled components. Provides a minimalist solution for responsive properties and for hover and focus css pseudoclasses.",
   "keywords": [
@@ -9,7 +9,7 @@
     "pseudoclasess",
     "responsive"
   ],
-  "main": "./dist/index.js",
+  "main": "./src/index.js",
   "scripts": {
     "build": "babel src/index.js --out-file dist/index.js",
     "test": "echo \"Error: no test specified yet\" && exit 1"
