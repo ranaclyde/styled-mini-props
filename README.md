@@ -1,4 +1,8 @@
 # styled-mini-props
+
+![NPM Version](https://img.shields.io/npm/v/styled-mini-props)
+![NPM License](https://img.shields.io/npm/l/styled-mini-props)
+
 Small helper tool for styled components. Provides a minimalist solution for responsive properties and for hover and focus css pseudoclasses.
 
 ## Install
