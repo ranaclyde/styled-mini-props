@@ -21,20 +21,11 @@ npm i styled-mini-props --save-dev
 
 ```js
 // styled-component configuration file
-import styled, { css } from "styled-components";
-import { createMediaQueries, cssHovProperties } from "styled-mini-props";
-
-// For css properties
-const responsiveProps = css(({ children, theme, ...cssProps }) => ({
-  ...createMediaQueries(cssProps)
-}));
-
-// For css pseudo-classes
-const hovProps = css(({ children, theme, ...cssProps }) => ({
-  ...cssHovProperties(cssProps)
-}));
+import styled from "styled-components";
+import { responsiveProps, hovProps } from "styled-mini-props";
 
 // Example component
+// ${responsiveProps} or ${hovProps} or both
 const Text = styled.p`
   font-family: Nunito;
   font-weight: normal;
