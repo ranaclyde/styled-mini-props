@@ -23,5 +23,8 @@
     "@babel/cli": "^7.19.3",
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2"
+  },
+  "dependencies": {
+    "styled-components": "^5.3.6"
   }
 }
