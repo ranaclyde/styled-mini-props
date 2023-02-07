@@ -1,21 +1,12 @@
-import { breakpoints } from "./breakpoints";
-import { cleanedCssProperty } from "./mapped-css-property";
+import { breakpoints } from './breakpoints';
+import { cleanedCssProperties } from './mapped-css-property';
 
 const breakpointArray = Object.values(breakpoints);
-
-// Modifica las propiedades pasadas por parametros
-const transformCssProperty = (css) => {
-  const cssKeys = Object.keys(css);
-  return cssKeys.map((cssKey) => ({
-    property: cleanedCssProperty(cssKey),
-    values: css[cssKey]
-  }));
-};
 
 const getQueryBreakpoint = (point) => `@media screen and (min-width: ${point})`;
 
 export const createMediaQueries = (css) => {
-  const cssProperties = transformCssProperty(css);
+  const cssProperties = cleanedCssProperties(css);
   const cssKeyValuePairs = cssProperties.reduce((items, item) => {
     const { property, values } = item;
 
@@ -23,12 +14,12 @@ export const createMediaQueries = (css) => {
       return items;
     }
 
-    if (typeof values === "object") {
+    if (typeof values === 'object') {
       if (Array.isArray(item.values)) {
         values.map((value, index) =>
           items.push({
             breakpoint: breakpointArray[index],
-            [property]: value
+            [property]: value,
           })
         );
       } else {
@@ -37,7 +28,7 @@ export const createMediaQueries = (css) => {
         claves.map((key) =>
           items.push({
             breakpoint: breakpoints[key],
-            [property]: values[key]
+            [property]: values[key],
           })
         );
       }
@@ -54,7 +45,7 @@ export const createMediaQueries = (css) => {
     if (breakpoint) {
       items[getQueryBreakpoint(breakpoint)] = {
         ...items[getQueryBreakpoint(breakpoint)],
-        ...css
+        ...css,
       };
     } else {
       items = { ...items, ...css };
@@ -64,6 +55,6 @@ export const createMediaQueries = (css) => {
   }, {});
 
   return {
-    ...cssMediaQueries
+    ...cssMediaQueries,
   };
 };
