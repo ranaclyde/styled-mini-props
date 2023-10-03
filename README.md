@@ -33,6 +33,7 @@ const Text = styled.p`
   color: black;
   margin: 0;
   ${responsiveProps}
+  ${hovProps}
 `;
 ```
 
@@ -49,16 +50,18 @@ const helloWorld = () => {
       color="red"
       margin={['10px', null, '20px']}
       fontSize={{ base: "12px", lg: "27px" }}
+      _hover={{ color: 'blue' }}
     >Hello World</Text>
   )
 }
 ```
+> You can also use focus with *_focus*
 
 ## Breakpoints
 
 They can be declared in two ways:
 
-1. **Array**
+#### 1. **Array**
 
 Example:
 ```jsx
@@ -72,7 +75,7 @@ In this way we declare the following breakpoints
 - sm: null (so it is still 10px)
 - md: 20px (md and up)
 
-2. **Object**: is the declarative form of the previous one
+#### 2. **Object**: is the declarative form of the previous one
 
 Example:
 ```jsx
@@ -91,6 +94,7 @@ The sizes are:
 |lg              |62em                           |
 |xl              |80em                           |
 |2xl             |96em                           |
+|3xl             |107em                           |
 
 
 ## To Do
@@ -98,3 +102,5 @@ The sizes are:
 - Pass the code to TypeScript
 - Add tests
 - Add react and storybook
+- Add the [stitches library](https://stitches.dev/)
+- Allow breakpoints to be changed
