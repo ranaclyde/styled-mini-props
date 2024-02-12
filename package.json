@@ -1,6 +1,6 @@
 {
   "name": "styled-mini-props",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "author": "Matías E Sanhueza <manoloesanhueza@gmail.com>",
   "description": "Small helper tool for styled components. Provides a minimalist solution for responsive properties and for hover and focus css pseudoclasses.",
   "keywords": [
@@ -35,6 +35,6 @@
     "vitest": "1.2.2"
   },
   "peerDependencies": {
-    "styled-components": "^5.0.0"
+    "styled-components": "^5 || ^6"
   }
 }
