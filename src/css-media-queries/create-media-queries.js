@@ -1,11 +1,9 @@
-import { breakpoints } from './breakpoints';
 import { cleanedCssProperties } from './mapped-css-property';
-
-const breakpointArray = Object.values(breakpoints);
 
 const getQueryBreakpoint = (point) => `@media screen and (min-width: ${point})`;
 
-export const createMediaQueries = (css) => {
+export const createMediaQueries = (css, breakpoints) => {
+  const breakpointArray = Object.values(breakpoints);
   const cssProperties = cleanedCssProperties(css);
   const cssKeyValuePairs = cssProperties.reduce((items, item) => {
     const { property, values } = item;

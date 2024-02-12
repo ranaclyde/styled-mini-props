@@ -1,6 +1,6 @@
 import { cleanedCssHovProperties } from './mapped-css-property';
 
-const allowHovProps = ['_hover', '_focus'];
+const allowHovProps = ['_hover', '_focus', '_link', '_active', '_visited'];
 
 const getHov = (hov) => `&:${hov.substring(1)}`;
 
