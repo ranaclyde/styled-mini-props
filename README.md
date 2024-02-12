@@ -21,8 +21,8 @@ npm i styled-mini-props --save-dev
 
 ```js
 // styled-component configuration file
-import styled from "styled-components";
-import { responsiveProps, hovProps } from "styled-mini-props";
+import styled from 'styled-components';
+import { responsiveProps, hovProps } from 'styled-mini-props';
 
 // Example component
 // ${responsiveProps} or ${hovProps} or both
@@ -49,13 +49,16 @@ const helloWorld = () => {
     <Text
       color="red"
       margin={['10px', null, '20px']}
-      fontSize={{ base: "12px", lg: "27px" }}
+      fontSize={{ base: '12px', lg: '27px' }}
       _hover={{ color: 'blue' }}
-    >Hello World</Text>
-  )
-}
+    >
+      Hello World
+    </Text>
+  );
+};
 ```
-> You can also use focus with *_focus*
+
+> You can also use focus, active, link and visited in the same way as hover. At the moment it is not possible to use breakpoints within these pseudoclasses.
 
 ## Breakpoints
 
@@ -64,11 +67,13 @@ They can be declared in two ways:
 #### 1. **Array**
 
 Example:
+
 ```jsx
 <Text margin={['10px', null, '20px']}>
   Hello World
 </Text>
 ```
+
 In this way we declare the following breakpoints
 
 - base: 10px
@@ -78,6 +83,7 @@ In this way we declare the following breakpoints
 #### 2. **Object**: is the declarative form of the previous one
 
 Example:
+
 ```jsx
 <Text fontSize={{ base: "12px", lg: "27px" }}>
   Hello World
@@ -86,21 +92,17 @@ Example:
 
 The sizes are:
 
-|Breakpoint      |Size                           |
-|----------------|-------------------------------|
-|base            |0em                            |
-|sm              |30em                           |
-|md              |48em                           |
-|lg              |62em                           |
-|xl              |80em                           |
-|2xl             |96em                           |
-|3xl             |107em                           |
-
+| Breakpoint | Size  |
+| ---------- | ----- |
+| base       | 0em   |
+| sm         | 30em  |
+| md         | 48em  |
+| lg         | 62em  |
+| xl         | 80em  |
+| 2xl        | 96em  |
+| 3xl        | 107em |
 
 ## To Do
 
 - Pass the code to TypeScript
-- Add tests
-- Add react and storybook
-- Add the [stitches library](https://stitches.dev/)
 - Allow breakpoints to be changed
