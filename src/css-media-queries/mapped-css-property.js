@@ -7,17 +7,23 @@ const shortcutProperties = {
   mr: 'margin-right',
   mt: 'margin-top',
   mb: 'margin-bottom',
+  my: 'margin-block',
+  mx: 'margin-inline',
   p: 'padding',
   pl: 'padding-left',
   pr: 'padding-right',
   pt: 'padding-top',
   pb: 'padding-bottom',
-  w: 'width',
-  h: 'height',
+  py: 'padding-block',
+  px: 'padding-inline',
   bgColor: 'background-color',
   bg: 'background',
+  w: 'width',
+  h: 'height',
   maxW: 'max-width',
   minW: 'min-width',
+  maxH: 'max-height',
+  minH: 'min-height',
 };
 
 const propsWithShortcuts = { ...allCssProperties, ...shortcutProperties };
@@ -31,11 +37,11 @@ export const cleanedCssProperties = (properties) => {
       cssTotal.push({
         property: propsWithShortcuts[cssElement],
         values: properties[cssElement],
-      })
+      });
     }
 
     return cssTotal;
-  }, [])
+  }, []);
 };
 
 // Mapea y transforma las propiedades hov de CSS
@@ -47,7 +53,7 @@ export const cleanedCssHovProperties = (properties) => {
         [propsWithShortcuts[key]]: properties[key],
       };
     }
-    
+
     return total;
   }, {});
 };
