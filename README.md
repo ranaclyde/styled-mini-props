@@ -102,6 +102,35 @@ The sizes are:
 | 2xl        | 96em  |
 | 3xl        | 107em |
 
+## CSS Shortcuts
+
+Some css shortcuts have been added to facilitate coding
+
+| Shortcut | Shortcut          |
+| ---------| ----------------- |
+|  m       | margin           |
+|  ml      | margin-left      |
+|  mr      | margin-right     |
+|  mt      | margin-top       |
+|  mb      | margin-bottom    |
+|  my      | margin-block     |
+|  mx      | margin-inline    |
+|  p       | padding          |
+|  pl      | padding-left     |
+|  pr      | padding-right    |
+|  pt      | padding-top      |
+|  pb      | padding-bottom   |
+|  py      | padding-block    |
+|  px      | padding-inline   |
+|  bgColor | background-color |
+|  bg      | background       |
+|  w       | width            |
+|  h       | height           |
+|  maxW    | max-width        |
+|  minW    | min-width        |
+|  maxH    | max-height       |
+|  minH    | min-height       |
+
 ## To Do
 
 - Pass the code to TypeScript
