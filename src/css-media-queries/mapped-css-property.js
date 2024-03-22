@@ -1,4 +1,4 @@
-import { allCssProperties } from './all-css-properties';
+import { allCssProperties } from './all-css-properties'
 
 // Atajos
 const shortcutProperties = {
@@ -23,26 +23,26 @@ const shortcutProperties = {
   maxW: 'max-width',
   minW: 'min-width',
   maxH: 'max-height',
-  minH: 'min-height',
-};
+  minH: 'min-height'
+}
 
-const propsWithShortcuts = { ...allCssProperties, ...shortcutProperties };
+const propsWithShortcuts = { ...allCssProperties, ...shortcutProperties }
 
 // Filtra y mapea las propiedas css reducidas en las correctas, utilizando snake case
 export const cleanedCssProperties = (properties) => {
-  const cssKeys = Object.keys(properties);
+  const cssKeys = Object.keys(properties)
 
   return cssKeys.reduce((cssTotal, cssElement) => {
     if (propsWithShortcuts[cssElement]) {
       cssTotal.push({
         property: propsWithShortcuts[cssElement],
-        values: properties[cssElement],
-      });
+        values: properties[cssElement]
+      })
     }
 
-    return cssTotal;
-  }, []);
-};
+    return cssTotal
+  }, [])
+}
 
 // Mapea y transforma las propiedades hov de CSS
 export const cleanedCssHovProperties = (properties) => {
@@ -50,10 +50,10 @@ export const cleanedCssHovProperties = (properties) => {
     if (propsWithShortcuts[key]) {
       total = {
         ...total,
-        [propsWithShortcuts[key]]: properties[key],
-      };
+        [propsWithShortcuts[key]]: properties[key]
+      }
     }
 
-    return total;
-  }, {});
-};
+    return total
+  }, {})
+}
