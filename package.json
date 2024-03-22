@@ -12,9 +12,10 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src --out-dir dist",
-    "test": "vitest",
     "clean": "rm -rf dist",
-    "prepublish": "npm run clean & npm run build"
+    "lint": "eslint .",
+    "prepublish": "npm run clean & npm run build",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,11 @@
     "@babel/cli": "7.19.3",
     "@babel/core": "7.20.5",
     "@babel/preset-env": "7.20.2",
+    "eslint": "8.0.1",
+    "eslint-config-standard": "17.1.0",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-n": "16.0.0",
+    "eslint-plugin-promise": "6.0.0",
     "styled-components": "5.3.6",
     "vitest": "1.2.2"
   },
