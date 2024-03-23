@@ -1,0 +1,14 @@
+name: Say Hello World
+
+on:
+  push:
+    branches:
+      - add-github-actions
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Echo the message
+        run: |
+          echo "Hola mundo!"
