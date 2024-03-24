@@ -58,4 +58,22 @@ describe('Test of the createMediaQueries and cssHovProperties methods', () => {
       })
     )
   })
+
+  it('Use the css shortcuts', async () => {
+    const cssProps = {
+      mx: '10px',
+      w: '100%',
+      bgColor: 'gray'
+    }
+
+    const cssGenerated = await createMediaQueries(cssProps, breakpoints)
+
+    expect(cssGenerated).toEqual(
+      expect.objectContaining({
+        'background-color': 'gray',
+        'margin-inline': '10px',
+        width: '100%'
+      })
+    )
+  })
 })
