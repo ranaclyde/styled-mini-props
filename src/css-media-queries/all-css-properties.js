@@ -330,5 +330,5 @@ export const allCssProperties = {
   wordSpacing: 'word-spacing',
   wordWrap: 'word-wrap',
   writingMode: 'writing-mode',
-  zIndex: 'z-index',
-};
+  zIndex: 'z-index'
+}

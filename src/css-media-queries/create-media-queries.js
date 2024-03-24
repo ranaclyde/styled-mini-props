@@ -1,15 +1,15 @@
-import { cleanedCssProperties } from './mapped-css-property';
+import { cleanedCssProperties } from './mapped-css-property'
 
-const getQueryBreakpoint = (point) => `@media screen and (min-width: ${point})`;
+const getQueryBreakpoint = (point) => `@media screen and (min-width: ${point})`
 
 export const createMediaQueries = (css, breakpoints) => {
-  const breakpointArray = Object.values(breakpoints);
-  const cssProperties = cleanedCssProperties(css);
+  const breakpointArray = Object.values(breakpoints)
+  const cssProperties = cleanedCssProperties(css)
   const cssKeyValuePairs = cssProperties.reduce((items, item) => {
-    const { property, values } = item;
+    const { property, values } = item
 
     if (!values) {
-      return items;
+      return items
     }
 
     if (typeof values === 'object') {
@@ -17,42 +17,42 @@ export const createMediaQueries = (css, breakpoints) => {
         values.map((value, index) =>
           items.push({
             breakpoint: breakpointArray[index],
-            [property]: value,
+            [property]: value
           })
-        );
+        )
       } else {
-        const claves = Object.keys(values);
+        const claves = Object.keys(values)
 
         claves.map((key) =>
           items.push({
             breakpoint: breakpoints[key],
-            [property]: values[key],
+            [property]: values[key]
           })
-        );
+        )
       }
     } else {
-      items.push({ breakpoint: 0, [property]: values });
+      items.push({ breakpoint: 0, [property]: values })
     }
 
-    return items;
-  }, []);
+    return items
+  }, [])
 
   const cssMediaQueries = cssKeyValuePairs.reduce((items, item) => {
-    const { breakpoint, ...css } = item;
+    const { breakpoint, ...css } = item
 
     if (breakpoint) {
       items[getQueryBreakpoint(breakpoint)] = {
         ...items[getQueryBreakpoint(breakpoint)],
-        ...css,
-      };
+        ...css
+      }
     } else {
-      items = { ...items, ...css };
+      items = { ...items, ...css }
     }
 
-    return items;
-  }, {});
+    return items
+  }, {})
 
   return {
-    ...cssMediaQueries,
-  };
-};
+    ...cssMediaQueries
+  }
+}
