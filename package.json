@@ -13,7 +13,7 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "clean": "rm -rf dist",
-    "lint": "eslint .",
+    "lint": "eslint \"**/*.{js,jsx}\"",
     "prepublish": "npm run clean & npm run build",
     "test": "vitest"
   },
