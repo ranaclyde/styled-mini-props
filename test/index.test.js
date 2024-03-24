@@ -13,11 +13,13 @@ describe('Test of the createMediaQueries and cssHovProperties methods', () => {
 
     const cssGenerated = await createMediaQueries(cssProps, breakpoints)
 
-    expect(cssGenerated).toMatchObject({
-      'background-color': 'black',
-      'font-size': '14px',
-      color: 'gray'
-    })
+    expect(cssGenerated).toEqual(
+      expect.objectContaining({
+        'background-color': 'black',
+        color: 'gray',
+        'font-size': '14px'
+      })
+    )
   })
 
   it('Use the createMediaQueries method with default breakpoints', async () => {
@@ -29,13 +31,15 @@ describe('Test of the createMediaQueries and cssHovProperties methods', () => {
 
     const cssGenerated = await createMediaQueries(cssProps, breakpoints)
 
-    expect(cssGenerated).toMatchObject({
-      'background-color': 'black',
-      'font-size': '12px',
-      '@media screen and (min-width: 48em)': { 'font-size': '14px' },
-      '@media screen and (min-width: 62em)': { 'font-size': '16px' },
-      color: 'gray'
-    })
+    expect(cssGenerated).toEqual(
+      expect.objectContaining({
+        'background-color': 'black',
+        'font-size': '12px',
+        '@media screen and (min-width: 48em)': { 'font-size': '14px' },
+        '@media screen and (min-width: 62em)': { 'font-size': '16px' },
+        color: 'gray'
+      })
+    )
   })
 
   it('Use the cssHovProperties method', async () => {
@@ -48,8 +52,10 @@ describe('Test of the createMediaQueries and cssHovProperties methods', () => {
 
     const cssGenerated = cssHovProperties(css)
 
-    expect(cssGenerated).toMatchObject({
-      '&:hover': { 'background-color': 'black', color: 'white' }
-    })
+    expect(cssGenerated).toEqual(
+      expect.objectContaining({
+        '&:hover': { 'background-color': 'black', color: 'white' }
+      })
+    )
   })
 })
