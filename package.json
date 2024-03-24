@@ -12,6 +12,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src --out-dir dist",
+    "ci": "yarn install --frozen-lockfile",
     "clean": "rm -rf dist",
     "lint": "eslint \"**/*.{js,jsx}\"",
     "prepublish": "npm run clean & npm run build",

@@ -2,8 +2,11 @@ name: Deployment Pipeline
 
 on:
   push:
-    branches:
-      - add-github-actions
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+    
 
 jobs:
   deploy:
@@ -17,7 +20,7 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: yarn install
+        run: yarn ci
       - name: Lint
         run: yarn lint
       - name: Test
