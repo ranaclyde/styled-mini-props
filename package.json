@@ -1,6 +1,6 @@
 {
   "name": "styled-mini-props",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "author": "Matías E Sanhueza <manoloesanhueza@gmail.com>",
   "description": "Small helper tool for styled components. Provides a minimalist solution for responsive properties and for hover and focus css pseudoclasses.",
   "keywords": [
@@ -15,7 +15,7 @@
     "ci": "yarn install --frozen-lockfile",
     "clean": "rm -rf dist",
     "lint": "eslint \"**/*.{js,jsx}\"",
-    "prepublish": "npm run clean & npm run build",
+    "prepublish": "yarn clean & yarn build",
     "test": "vitest"
   },
   "repository": {
